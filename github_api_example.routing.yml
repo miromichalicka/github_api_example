@@ -1,0 +1,19 @@
+
+github_api_example.config_form:
+  path: '/admin/config/github_api_example/config'
+  defaults:
+    _form: '\Drupal\github_api_example\Form\ConfigForm'
+    _title: 'ConfigForm'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE
+
+github_api_example.github_profile:
+  path: '/user/{user}/github_info'
+  defaults:
+    _title: 'Github info'
+    _controller: '\Drupal\github_api_example\Controller\UserController::showProfile'
+  requirements:
+    _entity_access: 'user.view'
+    user: \d+

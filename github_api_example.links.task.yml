@@ -1,0 +1,5 @@
+github_api_example.github_profile:
+  title: 'GitHub profile'
+  route_name: github_api_example.github_profile
+  base_route: entity.user.canonical
+  weight: 99

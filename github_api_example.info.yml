@@ -1,0 +1,5 @@
+name: GitHub API example
+type: module
+description: Module provides basic integration with Github API
+core: 8.x
+package: Custom

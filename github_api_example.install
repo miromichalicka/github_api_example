@@ -1,0 +1,26 @@
+<?php
+
+/**
+ * @file
+ * Install and uninstall script for GitHub API example module.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function github_api_example_install() {
+  // Add additional field to user entity.
+  $entity_manager = \Drupal::entityManager();
+  $definition = $entity_manager->getFieldStorageDefinitions('user')['github_username'];
+  $entity_manager->onFieldStorageDefinitionCreate($definition);
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function gathercontent_uninstall() {
+  // Remove configuration related to module.
+  \Drupal::config('github_api_example.config')
+    ->clear('personal_token')
+    ->save();
+}
