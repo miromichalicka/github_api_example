@@ -18,7 +18,7 @@ function github_api_example_install() {
 /**
  * Implements hook_uninstall().
  */
-function gathercontent_uninstall() {
+function github_api_example_uninstall() {
   // Remove configuration related to module.
   \Drupal::config('github_api_example.config')
     ->clear('personal_token')
